@@ -7,6 +7,7 @@ import PizzaList from './components/PizzaList';
 import Details from './components/Details';
 import Cart from './components/Cart/Cart';
 import Modal from './components/Modal';
+import Default from './components/Default';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/" component={PizzaList} />
         <Route path="/details" component={Details} />
         <Route path="/cart" component={Cart} />
+        <Route component={Default} />
       </Switch>
       <Modal />
     </React.Fragment>
