@@ -11,7 +11,10 @@ export default class ProductProvider  extends Component {
         cartSubTotal: 0,
         cartTax: 0,
         cartTotal: 0,
-        delivery: 200
+        delivery: 200,
+        modalOpen: false,
+        modalPizza: {},
+        cartTotalInEuro: 0,
     }
     componentDidMount() {
         // this.setState({pizza: await getPizzas()});
@@ -62,11 +65,13 @@ export default class ProductProvider  extends Component {
         const tempTax = subTotal * 0.1;
         const tax = parseFloat(tempTax.toFixed(2));
         const total = (parseInt(subTotal)) + tax + this.state.delivery;
+        const totalInEuro = total * 0.91
         this.setState(()=> {
             return {
                 cartSubTotal: subTotal,
                 cartTax: tax,
-                cartTotal: total
+                cartTotal: total,
+                cartTotalInEuro: Math.round(totalInEuro)
             }
         })
     }
@@ -131,6 +136,21 @@ export default class ProductProvider  extends Component {
         })
     }
 
+    // OPEN MODAL
+    openModal = (id) => {
+        const pizza = this.getPizza(id);
+        this.setState(()=> {
+            return {modalPizza: pizza, modalOpen: true}
+        })
+    }
+
+    // CLOSE MODAL
+    closeModal = () => {
+        this.setState(()=>{
+            return { modalOpen: false }
+        });
+    }
+
     render() {
         return (
             <ProductContext.Provider value={{
@@ -141,6 +161,8 @@ export default class ProductProvider  extends Component {
                 decrement: this.decrement,
                 removeItem: this.removeItem,
                 clearCart: this.clearCart,
+                openModal: this.openModal,
+                closeModal: this.closeModal
             }}>
                 {this.props.children}
             </ProductContext.Provider>
