@@ -17,7 +17,7 @@ export default class Pizza extends Component {
                             <img src={image} alt="pizza" className="card-img-top" />
                         </Link>
                         <div className="button-div">
-                        <button className="cart-btn" disabled={in_cart ? true : false} onClick={()=> {value.addToCart(id)}}> 
+                        <button className="cart-btn" disabled={in_cart ? true : false} onClick={()=> {value.addToCart(id); value.openModal(id)}}> 
                             {in_cart ? (<p className="text-capitalize mb-0" disabled> {" "}in Cart</p>) : (<i className="fas fa-cart-plus" />)}
                         </button>
                         </div>
