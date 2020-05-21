@@ -12,7 +12,7 @@ export default class Pizza extends Component {
                 <div className="card">
                     <ProductConsumer>
                         {(value) => (
-                    <div className="img-container p-5">
+                    <div className="img-container p-5" onClick={() => value.handleDetails(id)}>
                         <Link to="/details">
                             <img src={image} alt="pizza" className="card-img-top" />
                         </Link>

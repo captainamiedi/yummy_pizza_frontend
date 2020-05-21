@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Navbar from './components/Navbar';
 import PizzaList from './components/PizzaList';
+import Details from './components/Details';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={PizzaList} />
+        <Route path="/details" component={Details} />
       </Switch>
     </React.Fragment>
   );
