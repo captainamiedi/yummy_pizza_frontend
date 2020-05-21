@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-import {getPizzas} from './Helper/service';
+import {getPizzas, getOnePizza} from './Helper/service';
 const ProductContext = React.createContext();
 const ProductConsumer = ProductContext.Consumer;
 
 export default class ProductProvider  extends Component {
     state = {
         pizza: [],
-        cart: []
+        cart: [],
+        detailPizza: {},
     }
     async componentDidMount() {
         this.setState({pizza: await getPizzas()});
-        // console.log( this.state);
     }
 
     // GET PIZZA ID
@@ -33,11 +33,21 @@ export default class ProductProvider  extends Component {
         })
     }
 
+    // GET ONE PIZZA
+    handleDetails =async (id) => {
+        // const onePizza = await getOnePizza(id); /* These can work if a user cart history is tracked*/
+        const onePizza = this.getPizza(id); 
+        this.setState({
+            detailPizza: onePizza
+        })
+    }
+
     render() {
         return (
             <ProductContext.Provider value={{
                 ...this.state,
-                addToCart: this.addToCart
+                addToCart: this.addToCart,
+                handleDetails: this.handleDetails,
             }}>
                 {this.props.children}
             </ProductContext.Provider>
