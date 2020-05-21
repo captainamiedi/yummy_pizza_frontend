@@ -5,6 +5,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import PizzaList from './components/PizzaList';
 import Details from './components/Details';
+import Cart from './components/Cart/Cart';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={PizzaList} />
         <Route path="/details" component={Details} />
+        <Route path="/cart" component={Cart} />
       </Switch>
     </React.Fragment>
   );
