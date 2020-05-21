@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 export default function CartTotal({value}) {
-    const { delivery, cartSubTotal, cartTax, cartTotal, clearCart} = value;
+    const { delivery, cartSubTotal, cartTax, cartTotal, clearCart, cartTotalInEuro} = value;
     return (
         <>
             <div className="container">
@@ -28,6 +28,10 @@ export default function CartTotal({value}) {
                         <h5>
                             <span className="text-title">total: </span>
                             <strong> $ {cartTotal}</strong>
+                        </h5>
+                        <h5>
+                            <span className="text-title">total: </span>
+                            <strong> &#x20AC; {cartTotalInEuro}</strong>
                         </h5>
                     </div>
                 </div>
