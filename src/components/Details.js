@@ -11,7 +11,7 @@ export default class Details extends Component {
                     const {image, price, title, description, variations, trad_toppings, id, in_cart} = value.detailPizza
                     return (
                         <>
-                            <div className="container py-5">
+                            <div className="container py-5" data-testid="detail_page">
                                 <div className="row">
                                     <div className="col-10 mx-auto text-center text-slanted text-blue my-5">
                                         <h1>{title}</h1>
