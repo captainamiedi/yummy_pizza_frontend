@@ -12,12 +12,12 @@ export default class Pizza extends Component {
                 <div className="card">
                     <ProductConsumer>
                         {(value) => (
-                    <div className="img-container p-5" onClick={() => value.handleDetails(id)}>
-                        <Link to="/details">
+                    <div className="img-container p-5" onClick={() => value.handleDetails(id)} data-testid="details">
+                        <Link to="/details" data-testid="navigate">
                             <img src={image} alt="pizza" className="card-img-top" />
                         </Link>
                         <div className="button-div">
-                        <button className="cart-btn" disabled={in_cart ? true : false} onClick={()=> {value.addToCart(id); value.openModal(id)}}> 
+                        <button data-testid="cart" className="cart-btn" disabled={in_cart ? true : false} onClick={()=> {value.addToCart(id); value.openModal(id)}}> 
                             {in_cart ? (<p className="text-capitalize mb-0" disabled> {" "}in Cart</p>) : (<i className="fas fa-cart-plus" />)}
                         </button>
                         </div>
