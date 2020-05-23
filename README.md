@@ -1,6 +1,6 @@
 # YUMMI PIZZA
 
-https://travis-ci.com/captainamiedi/yummy_pizza_frontend.svg?token=stnFKobTv54yRqra8ivy&branch=develop
+[![Build Status](https://travis-ci.com/captainamiedi/yummy_pizza_frontend.svg?token=stnFKobTv54yRqra8ivy&branch=develop)](https://travis-ci.com/github/captainamiedi/yummy_pizza_frontend)
 
 Online Pizza delivery App.
 
