@@ -8,7 +8,7 @@ export default class Checkout extends Component {
         return (
             <CheckoutWrapper className="container-fluid">
                 <div className="row">
-               <div className="billing col-lg-7 col-md-6 col-sm-12 pb-4 mb-2 mx-auto">
+               <div className="billing col-lg-7 col-md-6 col-sm-12 pb-4 mb-2 mx-auto border-right">
                    <Billing />
                 </div> 
                <div className="order mx-auto col-lg-5 col-md-6 col-sm-12">
