@@ -20,7 +20,7 @@ export default class Cart extends Component {
                                     <Title name="Your" title="Cart" />
                                     <CartColumn />
                                     <CartList value={value} />
-                                    <CartTotal value={value} />
+                                    <CartTotal value={value} cart/>
                                 </>
                             )
                         } else {

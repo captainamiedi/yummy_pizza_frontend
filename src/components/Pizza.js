@@ -103,4 +103,9 @@ const PizzaWrapper = styled.div`
     display: flex;
     justify-content: flex-end
 }
+@media only screen and (max-width: 768px) {
+    .button-div {
+        padding-bottom: 1.7rem
+    }
+}
 `;
