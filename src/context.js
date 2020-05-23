@@ -15,23 +15,39 @@ export default class ProductProvider  extends Component {
         modalOpen: false,
         modalPizza: {},
         cartTotalInEuro: 0,
+        totalChange: false
     }
     componentDidMount() {
         // this.setState({pizza: await getPizzas()});
         this.setPizza();
         const data = localStorage.getItem('cart');
+        const dataSubTotal = localStorage.getItem('sub-total');
+        const dataTax = localStorage.getItem('tax');
+        const dataTotal = localStorage.getItem('total');
+        const dataEuro = localStorage.getItem('euro');
         // data ? this.setState({cart: JSON.parse(data)}) : []
         // console.log(data);
         if (data) {
-            this.setState({cart: JSON.parse(data)})
+            this.setState({
+                cart: JSON.parse(data),
+                cartSubTotal: JSON.parse(dataSubTotal),
+                cartTax: JSON.parse(dataTax),
+                cartTotal: JSON.parse(dataTotal),
+                cartTotalInEuro: JSON.parse(dataEuro)
+            })
         } else {
-            this.setState({cart: []})
+            this.setState({
+                cart: []})
         }
         // data ? this.setState({cart: data}) : [];
     }
 
     componentDidUpdate() {
-        localStorage.setItem('cart', JSON.stringify(this.state.cart))
+        localStorage.setItem('cart', JSON.stringify(this.state.cart));
+        localStorage.setItem('total', JSON.stringify(this.state.cartTotal))
+        localStorage.setItem('sub-total', JSON.stringify(this.state.cartSubTotal))
+        localStorage.setItem('tax', JSON.stringify(this.state.cartTax));
+        localStorage.setItem('euro', JSON.stringify(this.state.cartTotalInEuro));
     }
 
     setPizza =async () => {
@@ -164,6 +180,13 @@ export default class ProductProvider  extends Component {
         });
     }
 
+    // CHANGE TOTAL CURRENCY
+    toggleTotal = () => {
+        this.setState({
+            totalChange: !this.state.totalChange
+        })
+    }
+
     render() {
         return (
             <ProductContext.Provider value={{
@@ -175,7 +198,8 @@ export default class ProductProvider  extends Component {
                 removeItem: this.removeItem,
                 clearCart: this.clearCart,
                 openModal: this.openModal,
-                closeModal: this.closeModal
+                closeModal: this.closeModal,
+                toggleTotal: this.toggleTotal,
             }}>
                 {this.props.children}
             </ProductContext.Provider>

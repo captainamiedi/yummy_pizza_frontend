@@ -15,9 +15,13 @@ body{
   font-size: 1.2rem !important;
 }
 .text-title{
-  font-family: 'Permanent Marker', cursive;
+  /* font-family: 'Permanent Marker', cursive; */
   letter-spacing: 0.3rem;
   text-transform: uppercase
+}
+.title-style{
+  /* font-family: 'Permanent Marker', cursive; */
+  text-transform: capitalize
 }
 .text-blue{
   color: var(--mainBlue);
@@ -42,4 +46,8 @@ body{
   cursor: pointer;
   font-size: 1.2rem;
   color: var(--mainYellow);
+}
+.total{
+  display: flex;
+  justify-content: flex-end;
 }
