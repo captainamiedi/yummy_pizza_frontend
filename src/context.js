@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {getPizzas, getOnePizza} from './Helper/service';
+import {getPizzas} from './Helper/service';
 const ProductContext = React.createContext();
 const ProductConsumer = ProductContext.Consumer;
 
@@ -19,6 +19,19 @@ export default class ProductProvider  extends Component {
     componentDidMount() {
         // this.setState({pizza: await getPizzas()});
         this.setPizza();
+        const data = localStorage.getItem('cart');
+        // data ? this.setState({cart: JSON.parse(data)}) : []
+        // console.log(data);
+        if (data) {
+            this.setState({cart: JSON.parse(data)})
+        } else {
+            this.setState({cart: []})
+        }
+        // data ? this.setState({cart: data}) : [];
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem('cart', JSON.stringify(this.state.cart))
     }
 
     setPizza =async () => {
