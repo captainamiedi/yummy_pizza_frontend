@@ -1,5 +1,7 @@
 # YUMMI PIZZA
 
+https://travis-ci.com/captainamiedi/yummy_pizza_frontend.svg?token=stnFKobTv54yRqra8ivy&branch=develop
+
 Online Pizza delivery App.
 
 ## Getting Started
