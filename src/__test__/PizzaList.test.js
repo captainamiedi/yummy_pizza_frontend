@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PizzaList from '../components/PizzaList';
 import {render, cleanup} from '@testing-library/react';
 import ProductProvider from '../context';
@@ -13,5 +12,5 @@ it('context value update pizzalist component', () => {
         </ProductProvider>
     )
 
-    expect(pizzaList).toBeTruthy();;
+    expect(pizzaList).toBeTruthy();
 })

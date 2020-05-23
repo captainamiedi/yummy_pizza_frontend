@@ -1,13 +1,10 @@
+/* eslint-disable no-undef */
 const express = require('express');
-const favicon = require('express-favicon');
+// const favicon = require('express-favicon');
 const path = require('path');
 const port = process.env.PORT || 8080;
 const app = express();
-<<<<<<< HEAD
 const publicPath = path.join(__dirname, '.', 'public');
-=======
-const publicPath = path.join(__dirname, '..', 'public');
->>>>>>> 38cc4eea85274320e74183bda8dcfc92cbba0d0a
 app.use(express.static(publicPath));
 // app.use(favicon(__dirname + '/build/favicon.ico'));
 // the __dirname is the current directory from where the script is running
