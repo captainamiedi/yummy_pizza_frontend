@@ -29,7 +29,7 @@ it('it expects component to recieve props', () => {
 });
 
 it('it expects component to handle details function', () => {
-    const handleDetails = jest.fn;
+    const handleDetails = jest.fn(() => 'details');
     const history = createMemoryHistory();
     const { getByTestId} = render (
         <ProductContext.Provider value={{ handleDetails}}>
@@ -41,10 +41,11 @@ it('it expects component to handle details function', () => {
 
     const detailButton = getByTestId('details');
     fireEvent.click(detailButton);
+    expect(handleDetails).toHaveBeenCalledTimes(1)
 })
 
 it('it expects component to Add Cart function', () => {
-    const addToCart = jest.fn;
+    const addToCart = jest.fn(() => 'added');
     const openModal = jest.fn;
     const handleDetails = jest.fn;
     const history = createMemoryHistory();
@@ -58,4 +59,5 @@ it('it expects component to Add Cart function', () => {
 
     const cartButton = getByTestId('cart');
     fireEvent.click(cartButton);
+    expect(addToCart).toHaveBeenCalledTimes(1)
 })

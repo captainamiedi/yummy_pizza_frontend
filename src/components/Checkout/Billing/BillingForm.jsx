@@ -31,7 +31,7 @@ export default class BillingForm extends Component {
                     <div className="form-group col-md-4">
                     <label htmlFor="inputState">State</label>
                     <select id="inputState" className="form-control">
-                        <option selected>Choose...</option>
+                        <option >Choose...</option>
                         <option>...</option>
                     </select>
                     </div>
