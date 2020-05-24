@@ -15,12 +15,10 @@ body{
   font-size: 1.2rem !important;
 }
 .text-title{
-  /* font-family: 'Permanent Marker', cursive; */
   letter-spacing: 0.3rem;
   text-transform: uppercase
 }
 .title-style{
-  /* font-family: 'Permanent Marker', cursive; */
   text-transform: capitalize
 }
 .text-blue{
