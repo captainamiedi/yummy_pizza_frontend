@@ -18,15 +18,12 @@ export default class ProductProvider  extends Component {
         totalChange: false
     }
     componentDidMount() {
-        // this.setState({pizza: await getPizzas()});
         this.setPizza();
         const data = localStorage.getItem('cart');
         const dataSubTotal = localStorage.getItem('sub-total');
         const dataTax = localStorage.getItem('tax');
         const dataTotal = localStorage.getItem('total');
         const dataEuro = localStorage.getItem('euro');
-        // data ? this.setState({cart: JSON.parse(data)}) : []
-        // console.log(data);
         if (data) {
             this.setState({
                 cart: JSON.parse(data),
@@ -39,7 +36,6 @@ export default class ProductProvider  extends Component {
             this.setState({
                 cart: []})
         }
-        // data ? this.setState({cart: data}) : [];
     }
 
     componentDidUpdate() {
