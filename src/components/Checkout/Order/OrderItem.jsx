@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from "prop-types";
 
 export default function OrderItem({items}) {
     const { title, count, total} = items
@@ -18,4 +19,12 @@ export default function OrderItem({items}) {
         <hr className="mt-2 mb-3 d-lg-none" />
         </div>
     )
+}
+
+OrderItem.propTypes = {
+    items: PropTypes.shape({
+        title: PropTypes.string,
+        count: PropTypes.number,
+        total: PropTypes.number
+    }).isRequired
 }

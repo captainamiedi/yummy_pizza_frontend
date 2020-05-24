@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from "prop-types";
 
 export default function CartTotal({value, cart}) {
     const { delivery, cartSubTotal, cartTax, cartTotal, clearCart, cartTotalInEuro, totalChange} = value;
@@ -59,5 +60,15 @@ export default function CartTotal({value, cart}) {
             </div>
         </>
     )
+}
+
+CartTotal.propTypes = {
+    value: PropTypes.shape({
+        delivery: PropTypes.number,
+        cartSubTotal: PropTypes.number,
+        totalChange: PropTypes.bool,
+        cartTotal: PropTypes.number,
+        cartTax: PropTypes.number
+    }).isRequired
 }
 

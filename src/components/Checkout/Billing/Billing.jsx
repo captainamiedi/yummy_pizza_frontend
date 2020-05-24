@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Title from '../Title'
+import Title from '../../Title'
 import BillingForm from './BillingForm'
 
 export default class Billing extends Component {

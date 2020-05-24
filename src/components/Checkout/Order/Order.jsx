@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Title from '../Title'
+import Title from '../../Title'
 import OrderColumn from './OrderColumn'
 import OrderList from './OrderList'
-import CartTotal from '../Cart/CartTotal';
-import {ProductConsumer} from '../../context';
-import Empty from '../Cart/Empty';
+import CartTotal from '../../Cart/CartTotal';
+import {ProductConsumer} from '../../../context';
+import Empty from '../../Cart/Empty';
 import Payment from './Payment';
 
 export default class Order extends Component {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {getPizzas} from './Helper/service';
+import {getPizzas} from './Utils/service';
 const ProductContext = React.createContext();
 const ProductConsumer = ProductContext.Consumer;
 
@@ -47,8 +47,9 @@ export default class ProductProvider  extends Component {
     }
 
     setPizza =async () => {
+        const piz = await getPizzas();
         this.setState({
-            pizza: await getPizzas()
+            pizza: piz
         })
     }
 
